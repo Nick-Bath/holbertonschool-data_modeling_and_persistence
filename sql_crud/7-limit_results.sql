@@ -1,1 +1,3 @@
-select top 3 title, price from books
+select title, price from books
+order by price desc
+LIMIT 3;
