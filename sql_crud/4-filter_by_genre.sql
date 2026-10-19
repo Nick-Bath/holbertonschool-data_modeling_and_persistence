@@ -1,0 +1,1 @@
+select title, author from books where genre = 'Tech'

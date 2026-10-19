@@ -1,0 +1,1 @@
+select title, genre from books where genre = 'Fantasy' or price < 10
