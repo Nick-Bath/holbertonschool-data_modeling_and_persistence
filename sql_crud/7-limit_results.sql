@@ -1,3 +1,3 @@
 select title, price from books
-order by price desc
+order by price asc
 LIMIT 3;
