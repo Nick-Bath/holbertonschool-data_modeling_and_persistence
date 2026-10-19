@@ -1,1 +1,1 @@
-select title, author from books
+select title, price from books
