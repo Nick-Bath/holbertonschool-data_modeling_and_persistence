@@ -1,2 +1,3 @@
 select genre, avg(price) as avg_price_genre
-from books;
+from books
+group by genre;

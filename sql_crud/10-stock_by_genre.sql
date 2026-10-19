@@ -1,2 +1,3 @@
 select genre, sum(stock) as stock_per_genre
-from books;
+from books
+group by genre;
