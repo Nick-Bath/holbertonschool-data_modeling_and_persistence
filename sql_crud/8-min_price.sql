@@ -1,0 +1,1 @@
+select MIN(price) from books;

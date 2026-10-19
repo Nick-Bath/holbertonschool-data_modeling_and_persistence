@@ -1,0 +1,1 @@
+select SUM(stock) from books;
