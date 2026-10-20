@@ -1,6 +1,6 @@
 select students.name
 from students
-where student.id in (
+where students.id in (
     select enrollments.student_id
     from enrollments
 )
