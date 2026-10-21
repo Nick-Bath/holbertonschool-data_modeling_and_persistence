@@ -1,14 +1,14 @@
-select courses.title
-from courses
-left join registrations
-on courses.id = registrations.course_id
-group by courses.id, courses.title
-having count(*) > (
+select c.title, count(r.course_id)
+from courses c
+left join registrations r
+on c.id = r.course_id
+group by c.id, c.title
+having count(r.course_id) > (
     select avg(course_count)
     from (
         select count(*) as course_count
         from registrations
-        group by course_id
+        group by registrations.course_id
     )
 )
-order by courses.title;
+order by c.title;
