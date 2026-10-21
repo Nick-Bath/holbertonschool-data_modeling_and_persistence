@@ -2,7 +2,7 @@ select courses.title
 from courses
 left join registrations
 on courses.id = registrations.course_id
-group by courses.title
+group by courses.id, courses.title
 having count(*) > (
     select avg(course_count)
     from (
