@@ -1,10 +1,14 @@
 select c.title
 from courses c
-inner join registrations r
-on c.id = r.course_id
-group by c.id, c.title
+inner join assignments a
+on a.course_id = c.id
+group by c.title, a.course_id
 having count(*) > (
-        select count(*) * 1.0 / (select count(*) from courses)
-        from registrations
+    select avg(assignment_count)
+    from (
+        select count(*) as assignment_count
+        from assignments
+        group by course_id
+    )
 )
-order by c.title;
+order by c.title
